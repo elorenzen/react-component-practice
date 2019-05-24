@@ -4,21 +4,23 @@ import faker from 'faker';
 const CommentDetail = (props) => {
     return (
         <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={faker.image.avatar()} />
+            <a href="/" className="avatar">
+                <img alt="avatar" src={faker.image.avatar()} />
+            </a>
+            <div className="content">
+                <a href="/" className="author">
+                    {props.author}
                 </a>
-                <div className="content">
-                    <a href="/" className="author">
-                        {props.author}
-                    </a>
-                    <div className="metadata">
-                        <span className="date">
-                            Posted in {faker.date.month()}
-                        </span>
-                    </div>
-                    <div className="text">{faker.lorem.sentences()}</div>
+                <div className="metadata">
+                    <span className="date">
+                        Posted in {props.timeAgo}
+                    </span>
+                </div>
+                <div className="text">
+                    {props.commentText}
                 </div>
             </div>
+        </div>
     )
 };
 
